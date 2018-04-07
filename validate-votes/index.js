@@ -41,7 +41,7 @@ app.post('/validate', upload.array(), function(req, res, next){
 });
 
 // Start the web server on port 3000
-http.listen(3001, function(){
-  console.log('listening on *:3001');
+http.listen(3002, function(){
+  console.log('listening on *:3002');
 });
 
