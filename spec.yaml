@@ -1,0 +1,59 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: collect-votes
+spec:
+  ports:
+  - port: 3001
+    protocol: TCP
+    name: collect-votes
+  selector:
+    app: collect-votes
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: validate-votes
+spec:
+  ports:
+  - port: 3002
+    protocol: TCP
+    name: validate-votes
+  selector:
+    app: validate-votes
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: collect-votes
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: collect-votes
+    spec:
+      containers:
+        - name: collect-votes
+          image: nibalizer/collect-votes
+          ports:
+          - containerPort: 3001
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: validate-votes
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: validate-votes
+    spec:
+      containers:
+        - name: validate-votes
+          image: nibalizer/validate-votes
+          ports:
+          - containerPort: 3002
+
