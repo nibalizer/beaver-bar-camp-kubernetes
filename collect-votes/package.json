@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "vote for things",
   "dependencies": {
-    "express": "^4.15.2"
+    "express": "^4.15.2",
+    "request": "^2.85.0"
   },
   "devDependencies": {
     "chai": "3.5.0",
