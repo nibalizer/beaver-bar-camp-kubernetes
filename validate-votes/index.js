@@ -20,7 +20,7 @@ app.get('/valid_votes', function(req, res){
 app.get('/info', function(req, res){
   var info = {}
   info['hostname'] = 'stuff'; //environ['HOSTNAME']; // TODO make real js
-  info['version'] = '0.0.1';
+  info['version'] = '0.0.2';
   info['uptime'] = 0;
 
   res.json(info);
