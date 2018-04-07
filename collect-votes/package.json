@@ -1,0 +1,21 @@
+{
+  "name": "voting-app",
+  "version": "0.0.1",
+  "description": "vote for things",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "chai": "3.5.0",
+    "co-mocha": "1.1.2",
+    "mocha": "2.5.3",
+    "sinon": "1.17.4",
+    "sinon-chai": "2.8.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "npm run test-unit",
+    "test-unit": "NODE_ENV=test mocha --require co-mocha '*.spec.js'"
+  },
+  "test-unit": "NODE_ENV=test mocha '/**/*.spec.js'"
+}
